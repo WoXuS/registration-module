@@ -2,12 +2,9 @@ import React from "react";
 import { TextField, InputAdornment, IconButton } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useController } from "react-hook-form";
-import { sx_field } from "../../Theme/Theme";
+import { sx_field } from "../../theme/Theme";
 
-const InputField = ({ control, name, label }) => {
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+const InputField = ({ control, name, label, readOnly, showPassword, handleShowPassword }) => {
 
   const {
     field,
@@ -38,6 +35,10 @@ const InputField = ({ control, name, label }) => {
           error={invalid}
           helperText={invalid ? error?.message : null}
           sx={sx_field}
+          disabled={readOnly}
+          InputProps={{
+            readOnly: readOnly,
+          }}
         />
       )}
       {/* Adding the posibility to uncover password */}
@@ -60,18 +61,20 @@ const InputField = ({ control, name, label }) => {
           helperText={invalid ? error?.message : null}
           type={showPassword ? "text" : "password"}
           sx={sx_field}
+          disabled={readOnly}
           InputProps={{
-            endAdornment: (
+            endAdornment: (field.name === "password" &&
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
+                  onClick={handleShowPassword}
                   edge="end"
                 >
                   {showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
             ),
+            readOnly: readOnly,
           }}
         />
       )}

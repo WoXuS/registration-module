@@ -1,11 +1,10 @@
 import React from "react";
 import { TextField, Autocomplete } from "@mui/material";
 import { useController } from "react-hook-form";
-import { sx_field } from "../../Theme/Theme";
+import { sx_field } from "../../theme/Theme";
 
-const RoleField = ({ control, name, label }) => {
+const RoleField = ({ control, name, label, readOnly }) => {
   const roles = [
-    "Wybierz...",
     "Administrator",
     "Dyrektor",
     "Inspektor",
@@ -32,6 +31,8 @@ const RoleField = ({ control, name, label }) => {
       name={"autocomplete-" + field.name}
       onChange={(event, value) => field.onChange(value)}
       options={roles}
+      readOnly={readOnly}
+      disabled={readOnly}
       renderInput={(params) => (
         <TextField
           error={invalid}

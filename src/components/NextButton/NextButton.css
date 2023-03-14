@@ -1,6 +1,9 @@
 .buttonContainer {
   display: flex;
-  justify-content: center;
-  padding-bottom: 3px;
-  padding-top: 5px;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.MuiButton-contained, .MuiButton-outlined {
+  text-transform: unset !important;
 }

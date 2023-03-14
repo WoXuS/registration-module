@@ -2,8 +2,34 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.stuff {
+  width: 60%;
+  height: 100%;
+  background-color: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-form {
+  height: 100%;
+  width: 40%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+}
+
+
+@media (max-width: 1200px) {
+  .stuff {
+    display: none;
+  }
+  .registration-form {
+    height: 100%;
+    width: 100%;
+  }
 }

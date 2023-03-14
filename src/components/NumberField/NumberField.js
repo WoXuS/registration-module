@@ -2,9 +2,9 @@ import React from "react";
 import { TextField } from "@mui/material";
 import { PatternFormat } from "react-number-format";
 import { useController } from "react-hook-form";
-import { sx_field } from "../../Theme/Theme";
+import { sx_field } from "../../theme/Theme";
 
-const NumberField = ({ name, control, label }) => {
+const NumberField = ({ name, control, label, readOnly }) => {
   const {
     field,
     fieldState: { invalid, error },
@@ -23,7 +23,6 @@ const NumberField = ({ name, control, label }) => {
         field.onChange(values.formattedValue);
       }}
       format={nip ? "###-###-##-##" : "+48 ###-###-###"}
-      // allowEmptyFormatting
       mask="_"
       customInput={TextField}
       name={field.name}
@@ -36,7 +35,9 @@ const NumberField = ({ name, control, label }) => {
       error={invalid}
       helperText={invalid ? error?.message : null}
       fullWidth
+      disabled={readOnly}
       sx={sx_field}
+      inputProps={{ readOnly: readOnly }}
     />
   );
 };

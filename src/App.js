@@ -1,10 +1,16 @@
 import "./App.css";
-import Registration from "./Registration";
+import Registration from "./pages/Registration/Registration";
+import Logo from "./theme/Logo/Logo";
 
 function App() {
   return (
     <div className="App">
-      <Registration />
+      <div className="registration-form">
+        <Registration />
+      </div>
+      <div className="stuff">
+        <Logo />
+      </div>
     </div>
   );
 }
