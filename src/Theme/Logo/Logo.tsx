@@ -2,7 +2,7 @@ import React from "react";
 import "./Logo.css";
 import { Typography } from "@mui/material";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <div className="container">
       <svg
@@ -12,7 +12,6 @@ const Logo = () => {
         x="0px"
         y="0px"
         viewBox="0 0 231.25 46.5"
-        enable-background="new 0 0 231.25 46.5"
       >
         <g>
           <path
@@ -52,9 +51,7 @@ const Logo = () => {
           ></path>
         </g>
       </svg>
-      <Typography className="sub-title" variant="h3" fontFamily="Helvetica">THE GOOD People</Typography>
+      <Typography className="sub-title" variant="h3">THE GOOD People</Typography>
     </div>
   );
 };
-
-export default Logo;

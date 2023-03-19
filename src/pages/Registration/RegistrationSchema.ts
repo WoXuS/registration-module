@@ -5,7 +5,7 @@ export const schema = yup.object().shape({
   email: yup
     .string()
     .email("Wprowadź poprawny email")
-    .required("Proszę podać email"),
+    .required("Podaj adres email"),
   password: yup
     .string()
     .min(8, "Hasło musi składać się z conajmniej 8 znaków")
@@ -16,11 +16,11 @@ export const schema = yup.object().shape({
     .required(),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password"), null], "Hasła muszą się zgadzać")
+    .oneOf([yup.ref("password"), undefined], "Hasła muszą się zgadzać")
     .required("Potwierdź hasło"),
   nip: yup
     .string()
-    .matches(/^\d{3}-\d{3}-\d{2}-\d{2}$/, "Wprowadź poprawny NIP")
+    .matches(/^\d{3}-\d{3}-\d{2}-\d{2}$/, "Wprowadź poprawny numer NIP")
     .required(),
   phone: yup
     .string()
@@ -44,5 +44,5 @@ export const schema = yup.object().shape({
       ],
       "Wybierz rolę użytkownika"
     )
-    .required(),
+    .required("Wybierz rolę użytkownika"),
 });

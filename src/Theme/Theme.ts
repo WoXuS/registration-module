@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
-    black: {
+    secondary: {
       main: "#000000",
       contrastText: "#fff",
     },
@@ -11,4 +11,3 @@ export const theme = createTheme({
     },
   },
 });
-export const sx_field = { marginTop: 3 };

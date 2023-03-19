@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   CircularProgress,
@@ -7,9 +6,24 @@ import {
   Typography,
 } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+
 import "./NextButton.css";
 
-function NextButton({ loading, readOnly, disabled, handleBack, apiError }) {
+type ButtonProps = {
+  loading: boolean;
+  readOnly: boolean;
+  disabled: boolean;
+  handleBack: () => void;
+  apiError: boolean;
+};
+
+export const NextButton = ({
+  loading,
+  readOnly,
+  disabled,
+  handleBack,
+  apiError,
+}: ButtonProps) => {
   return (
     <div className="buttonContainer">
       {loading ? (
@@ -19,7 +33,7 @@ function NextButton({ loading, readOnly, disabled, handleBack, apiError }) {
               Wystąpił błąd, spróbuj ponownie później
             </Typography>
             <Button
-              color="black"
+              color="secondary"
               variant="outlined"
               onClick={handleBack}
               size="large"
@@ -41,7 +55,7 @@ function NextButton({ loading, readOnly, disabled, handleBack, apiError }) {
           }}
         >
           {readOnly && (
-            <IconButton color="black" onClick={handleBack}>
+            <IconButton color="secondary" onClick={handleBack}>
               <ArrowBackIosIcon />
             </IconButton>
           )}
@@ -59,6 +73,4 @@ function NextButton({ loading, readOnly, disabled, handleBack, apiError }) {
       )}
     </div>
   );
-}
-
-export default NextButton;
+};

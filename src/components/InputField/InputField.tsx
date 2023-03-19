@@ -1,11 +1,22 @@
-import React from "react";
 import { TextField, InputAdornment, IconButton } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useController } from "react-hook-form";
-import { sx_field } from "../../theme/Theme";
 
-const InputField = ({ control, name, label, readOnly, showPassword, handleShowPassword }) => {
+import { FieldProps } from "../../pages/Registration/Registration";
 
+interface InputFieldProps extends FieldProps {
+  showPassword: boolean | undefined;
+  handleShowPassword: (() => void) | undefined;
+}
+
+export const InputField = ({
+  control,
+  name,
+  label,
+  readOnly,
+  showPassword,
+  handleShowPassword,
+}: InputFieldProps) => {
   const {
     field,
     fieldState: { error, invalid },
@@ -34,7 +45,7 @@ const InputField = ({ control, name, label, readOnly, showPassword, handleShowPa
           color="primary"
           error={invalid}
           helperText={invalid ? error?.message : null}
-          sx={sx_field}
+          sx={{ marginTop: 3 }}
           disabled={readOnly}
           InputProps={{
             readOnly: readOnly,
@@ -60,10 +71,10 @@ const InputField = ({ control, name, label, readOnly, showPassword, handleShowPa
           error={invalid}
           helperText={invalid ? error?.message : null}
           type={showPassword ? "text" : "password"}
-          sx={sx_field}
+          sx={{ marginTop: 3 }}
           disabled={readOnly}
           InputProps={{
-            endAdornment: (field.name === "password" &&
+            endAdornment: field.name === "password" && (
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
@@ -81,5 +92,3 @@ const InputField = ({ control, name, label, readOnly, showPassword, handleShowPa
     </>
   );
 };
-
-export default InputField;

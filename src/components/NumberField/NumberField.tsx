@@ -1,10 +1,10 @@
-import React from "react";
 import { TextField } from "@mui/material";
 import { PatternFormat } from "react-number-format";
 import { useController } from "react-hook-form";
-import { sx_field } from "../../theme/Theme";
 
-const NumberField = ({ name, control, label, readOnly }) => {
+import { FieldProps } from "../../pages/Registration/Registration";
+
+export const NumberField = ({ name, control, label, readOnly }: FieldProps) => {
   const {
     field,
     fieldState: { invalid, error },
@@ -36,10 +36,8 @@ const NumberField = ({ name, control, label, readOnly }) => {
       helperText={invalid ? error?.message : null}
       fullWidth
       disabled={readOnly}
-      sx={sx_field}
+      sx={{ marginTop: 3 }}
       inputProps={{ readOnly: readOnly }}
     />
   );
 };
-
-export default NumberField;

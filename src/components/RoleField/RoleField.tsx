@@ -1,9 +1,9 @@
-import React from "react";
 import { TextField, Autocomplete } from "@mui/material";
 import { useController } from "react-hook-form";
-import { sx_field } from "../../theme/Theme";
 
-const RoleField = ({ control, name, label, readOnly }) => {
+import { FieldProps } from "../../pages/Registration/Registration";
+
+export const RoleField = ({ control, name, label, readOnly }: FieldProps) => {
   const roles = [
     "Administrator",
     "Dyrektor",
@@ -26,9 +26,8 @@ const RoleField = ({ control, name, label, readOnly }) => {
       {...field}
       clearOnEscape
       disablePortal
-      sx={sx_field}
+      sx={{ marginTop: 3 }}
       filterSelectedOptions
-      name={"autocomplete-" + field.name}
       onChange={(event, value) => field.onChange(value)}
       options={roles}
       readOnly={readOnly}
@@ -36,13 +35,12 @@ const RoleField = ({ control, name, label, readOnly }) => {
       renderInput={(params) => (
         <TextField
           error={invalid}
-          helperText={invalid ? error.message : null}
+          helperText={invalid ? error?.message : null}
           name={field.name}
           label={label}
           inputRef={ref}
           variant="standard"
           margin="dense"
-          fullWidth
           required
           color="primary"
           autoComplete="off"
@@ -52,5 +50,3 @@ const RoleField = ({ control, name, label, readOnly }) => {
     />
   );
 };
-
-export default RoleField;
