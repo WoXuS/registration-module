@@ -7,10 +7,10 @@ import { Container, ThemeProvider, Typography } from "@mui/material";
 import { theme } from "../../theme/Theme";
 import { schema } from "./RegistrationSchema";
 
-import { InputField } from "../../components/InputField/InputField";
-import { RoleField } from "../../components/RoleField/RoleField";
-import { NumberField } from "../../components/NumberField/NumberField";
-import { NextButton } from "../../components/NextButton/NextButton";
+import InputField from "../../components/InputField/InputField";
+import RoleField from "../../components/RoleField/RoleField";
+import NumberField from "../../components/NumberField/NumberField";
+import NextButton from "../../components/NextButton/NextButton";
 
 interface FormData {
   email: string;
@@ -18,7 +18,7 @@ interface FormData {
   confirmPassword: string;
   nip: string;
   role: null | string;
-};
+}
 
 export interface FieldProps {
   control: any;

@@ -50,3 +50,5 @@ export const RoleField = ({ control, name, label, readOnly }: FieldProps) => {
     />
   );
 };
+
+export default RoleField;

@@ -9,7 +9,7 @@ interface InputFieldProps extends FieldProps {
   handleShowPassword: (() => void) | undefined;
 }
 
-export const InputField = ({
+const InputField = ({
   control,
   name,
   label,
@@ -92,3 +92,5 @@ export const InputField = ({
     </>
   );
 };
+
+export default InputField;

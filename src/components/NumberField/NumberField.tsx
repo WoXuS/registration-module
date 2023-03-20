@@ -4,7 +4,7 @@ import { useController } from "react-hook-form";
 
 import { FieldProps } from "../../pages/Registration/Registration";
 
-export const NumberField = ({ name, control, label, readOnly }: FieldProps) => {
+const NumberField = ({ name, control, label, readOnly }: FieldProps) => {
   const {
     field,
     fieldState: { invalid, error },
@@ -41,3 +41,5 @@ export const NumberField = ({ name, control, label, readOnly }: FieldProps) => {
     />
   );
 };
+
+export default NumberField

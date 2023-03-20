@@ -74,3 +74,5 @@ export const NextButton = ({
     </div>
   );
 };
+
+export default NextButton;
