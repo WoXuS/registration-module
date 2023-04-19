@@ -56,13 +56,9 @@ export const Registration = () => {
       setLoading(true);
       setTimeout(() => {
         setApiError(true);
-        //Using console logs only for the exercise purpose. They would be deleted before going to production.
-        console.log("Problem łączenia z bazą. Zapisane dane rejestracji:");
-        console.log(data);
       }, 2000);
     } else {
       setAnimation(true);
-      //Adding a delay so nothing changes during the animation
       setTimeout(() => {
         setReadOnly(true);
       }, 500);
