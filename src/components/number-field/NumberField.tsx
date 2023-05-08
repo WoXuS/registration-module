@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { PatternFormat } from "react-number-format";
 import { useController } from "react-hook-form";
 
-import { FieldProps } from "../../pages/registration/Registration";
+import { FieldProps } from "../../pages/Registration/Registration";
 
 const NumberField = ({ name, control, label, readOnly }: FieldProps) => {
   const {

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, ThemeProvider, Typography } from "@mui/material";
 
-import { theme } from "../../theme/theme";
+import { theme } from "../../Theme/Theme";
 import schema from "./RegistrationSchema";
 
 import InputField from "../../components/input-field/InputField";

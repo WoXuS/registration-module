@@ -1,7 +1,7 @@
 import { TextField, Autocomplete } from "@mui/material";
 import { useController } from "react-hook-form";
 
-import { FieldProps } from "../../pages/registration/Registration";
+import { FieldProps } from "../../pages/Registration/Registration";
 
 const RoleField = ({ control, name, label, readOnly }: FieldProps) => {
   const roles = [
