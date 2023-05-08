@@ -17,7 +17,7 @@ type ButtonProps = {
   apiError: boolean;
 };
 
-export const NextButton = ({
+const NextButton = ({
   loading,
   readOnly,
   disabled,

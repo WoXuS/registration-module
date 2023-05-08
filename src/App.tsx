@@ -1,6 +1,6 @@
 import "./App.css";
 import { Registration } from "./pages/Registration/Registration";
-import { Logo } from "./theme/Logo/Logo";
+import Logo from "./theme/Logo/Logo";
 
 const App = () => {
   return (
