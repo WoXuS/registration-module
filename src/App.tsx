@@ -2,7 +2,7 @@ import "./App.css";
 import { Registration } from "./pages/Registration/Registration";
 import { Logo } from "./theme/Logo/Logo";
 
-export const App = () => {
+const App = () => {
   return (
     <div className="App">
       <div className="registration-form">
@@ -14,3 +14,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;
