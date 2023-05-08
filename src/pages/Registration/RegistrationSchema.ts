@@ -1,7 +1,6 @@
 import * as yup from "yup";
 
-//schema validation from Yup
-export const schema = yup.object().shape({
+const schema = yup.object().shape({
   email: yup
     .string()
     .email("Wprowadź poprawny email")
@@ -27,7 +26,7 @@ export const schema = yup.object().shape({
     .notRequired()
     .test("phone", "Wprowadź poprawny numer telefonu", (value) => {
       if (!value) {
-        return true; // If the field is empty, skip validation
+        return true;
       }
       return /^\+48\s\d{3}-\d{3}-\d{3}$/.test(value);
     }),
@@ -46,3 +45,5 @@ export const schema = yup.object().shape({
     )
     .required("Wybierz rolę użytkownika"),
 });
+
+export default schema;

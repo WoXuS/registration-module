@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, ThemeProvider, Typography } from "@mui/material";
 
-import { theme } from "../../theme/Theme";
-import { schema } from "./RegistrationSchema";
+import { theme } from "../../theme/theme";
+import schema from "./RegistrationSchema";
 
-import InputField from "../../components/InputField/InputField";
-import RoleField from "../../components/RoleField/RoleField";
-import NumberField from "../../components/NumberField/NumberField";
-import NextButton from "../../components/NextButton/NextButton";
+import InputField from "../../components/input-field/InputField";
+import RoleField from "../../components/role-field/RoleField";
+import NumberField from "../../components/number-field/NumberField";
+import NextButton from "../../components/next-button/NextButton";
 
 interface FormData {
   email: string;
@@ -27,7 +27,7 @@ export interface FieldProps {
   readOnly: boolean;
 }
 
-export const Registration = () => {
+const Registration = () => {
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState(false);
   const [readOnly, setReadOnly] = useState(false);
@@ -148,3 +148,5 @@ export const Registration = () => {
     </Container>
   );
 };
+
+export default Registration;

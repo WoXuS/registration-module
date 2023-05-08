@@ -2,7 +2,7 @@ import { TextField, InputAdornment, IconButton } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useController } from "react-hook-form";
 
-import { FieldProps } from "../../pages/Registration/Registration";
+import { FieldProps } from "../../pages/registration/Registration";
 
 interface InputFieldProps extends FieldProps {
   showPassword: boolean | undefined;
